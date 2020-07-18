@@ -1,29 +1,31 @@
-# PROJECT 2 (NAME TBD)
+# Fitness Journal (Name TBD)
 
 ## Live Site URL
 
 ## Project Proposal
 
-Ideas so far:
-
-1. Storefront. Think like a poor mans Amazon? Have DB with products that would generate (with handlebars) a view to show all of them. Allow the user to add to a cart (another view), checkout (possibly another view?), etc.
-2.
-
 User Story
 
 ```
-AS AN
-I WANT
-SO THAT
+AS AN avid fitness nerd, or someone trying to lose the COVID 15
+I WANT a fitness application that can track my workouts and daily nutriton
+SO THAT I can glean what my progress is at any point in time towards my goals
 ```
 
 Acceptance Criteria
 
 ```
-GIVEN
-WHEN I
-WHEN I
-WHEN I
+GIVEN that I am attempting to track my health and wellbeing progress
+WHEN I arrive at the site
+THEN I am given a dashboard showing all entries to date thus far
+WHEN I select one of the journal entires
+THEN I am taken to a view displaying all entered exercise/nutrition information in a post type view
+WHEN I want to add a new entry
+THEN I am taken to a form view that will prompt for the user to select what activity(ies) I did and what they ate.
+WHEN I want to set a fitness goal for overall time spent active
+THEN I am shown a form that allows me to enter my time goal
+WHEN I want to see my progress on any given goal and click on one
+THEN I am shown a visual indicator or the progress thus far (hitting a goal will do something amazing)
 ```
 
 ## TABLE OF CONTENTS
