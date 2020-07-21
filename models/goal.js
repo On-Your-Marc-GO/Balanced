@@ -10,7 +10,7 @@ module.exports = function (sequelize, DataTypes) {
             },
         },
         totalTimeAccrued: {
-            type: DataTypes.INT, // This will be tracked in minutes. So INT datatype.
+            type: DataTypes.INTEGER, // This will be tracked in minutes. So INT datatype.
             allowNull: false,
             validate: {
                 isNumeric: true,
@@ -18,7 +18,7 @@ module.exports = function (sequelize, DataTypes) {
             },
         },
         goalTime: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             alloqNull: false,
             validate: {
                 isNumeric: true,
