@@ -1,0 +1,39 @@
+<h1>Data</h1>
+
+<div class='row'>
+    <div class="col-lg-4">
+        <ul>
+            {{#each journalentries}}
+                <li>
+                    <p><span>ID:</span> {{this.id}}</p>
+                    <p><span>Date:</span> {{this.date}}</p>
+                    <p><span>Title:</span> {{this.title}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <div class="col-lg-4">
+        <ul>
+            {{#each activityentries}}
+                <li>
+                    <p><span>Name:</span> {{this.name}}</p>
+                    <p><span>Total Time:</span> {{this.totalTime}}</p>
+                    <p><span>Activity Notes:</span> {{this.entryActivityText}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <div class="col-lg-4">
+        <ul>
+            {{#each nutritionentries}}
+                <li>
+                    <p><span>Time of Meal:</span> {{this.typeOfMeal}}</p>
+                    <p><span>Ate:</span> {{this.entryNutritionText}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+
+</div>
