@@ -9,7 +9,7 @@ module.exports = function (sequelize, DataTypes) {
             },
         },
         totalTime: {
-            type: DataTypes.INT, // This will be tracked in minutes. So INT datatype.
+            type: DataTypes.INTEGER, // This will be tracked in minutes. So INT datatype.
             allowNull: false,
             validate: {
                 isNumeric: true,
@@ -29,7 +29,7 @@ module.exports = function (sequelize, DataTypes) {
             },
         });
 
-        ActivityEntry.hasOne(models.Category, {
+        ActivityEntry.belongsTo(models.Category, {
             foreignKey: {
                 allowNull: false,
             },
