@@ -1,15 +1,12 @@
 {
     "development": {
-        "username": "root",
-        "password": "ClassCod3!",
-        "database": "fitness_journal_db",
-        "host": "127.0.0.1",
+        "use_env_variable": "DEVDB",
         "dialect": "mysql"
     },
     "test": {
         "username": "root",
         "password": "",
-        "database": "database_test",
+        "database": "fitness_journal_db",
         "host": "127.0.0.1",
         "dialect": "mysql"
     },
