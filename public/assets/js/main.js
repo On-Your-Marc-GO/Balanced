@@ -4,10 +4,11 @@ $('#body-row .collapse').collapse('hide');
 $('#collapse-icon').addClass('fa-angle-double-left');
 
 // Collapse click
-$('[data-toggle=sidebar-colapse]').click(function () {
+$('[data-toggle=sidebar-colapse]').click => () {
     SidebarCollapse();
-});
+};
 
+var SeparatorTitle = $('.sidebar-separator-title');
 function SidebarCollapse() {
     $('.menu-collapsed').toggleClass('d-none');
     $('.sidebar-submenu').toggleClass('d-none');
@@ -15,7 +16,6 @@ function SidebarCollapse() {
     $('#sidebar-container').toggleClass('sidebar-expanded sidebar-collapsed');
 
     // Treating d-flex/d-none on separators with title
-    var SeparatorTitle = $('.sidebar-separator-title');
     if (SeparatorTitle.hasClass('d-flex')) {
         SeparatorTitle.removeClass('d-flex');
     } else {
