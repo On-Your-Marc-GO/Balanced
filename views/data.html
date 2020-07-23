@@ -7,63 +7,64 @@
     <link rel="stylesheet" href="../public/assets/css/style.css">
     <title>Data</title>
 </head>
-
-<div> 
-    <div class='row'>
+<div class='container'> 
+    <div class='jumbotron'>
         <div class='col-lg-12 text-center'>
             <h1>Data</h1>
         </div>
     </div>
-</div>
 
-<div class='row'>
-    <div class='col-lg-4 card bg-success'>
-        <ul>
-            <div class='card-header'>
-                {{#each journalentries}}
-            </div>
-            <div class='card-body'>
-                    <li>
-                        <p><span>ID:</span> {{this.id}}</p>
-                        <p><span>Date:</span> {{this.date}}</p>
-                        <p><span>Title:</span> {{this.title}}</p>
-                    </li>
-                {{/each}}
-            </div>
-        </ul>
+<hr />
+
+    <div class='row'>
+        <div class='col-lg-4 card bg-success'>
+            <ul>
+                <div class='card-header'>
+                    {{#each journalentries}}
+                </div>
+                <div class='card-body'>
+                        <li>
+                            <p><span>ID:</span> {{this.id}}</p>
+                            <p><span>Date:</span> {{this.date}}</p>
+                            <p><span>Title:</span> {{this.title}}</p>
+                        </li>
+                    {{/each}}
+                </div>
+            </ul>
+        </div>
+
+        <div class='col-lg-4 card bg-success'>
+            <ul>
+                <div class='card-header'>
+                    {{#each activityentries}}
+                </div>
+                <div class='card-body'>
+                        <li>
+                            <p><span>Name:</span> {{this.name}}</p>
+                            <p><span>Total Time:</span> {{this.totalTime}}</p>
+                            <p><span>Activity Notes:</span> {{this.entryActivityText}}</p>
+                        </li>
+                    {{/each}}
+                </div>
+            </ul>
+        </div>
+
+        <div class='col-lg-4 card bg-success'>
+            <ul>
+                <div class='card-header'>
+                    {{#each nutritionentries}}
+                </div>
+                <div class='card-body'>
+                        <li>
+                        <p><span>Time of Meal:</span> {{this.typeOfMeal}}</p>
+                        <p><span>Ate:</span> {{this.entryNutritionText}}</p>
+                        </li>
+                    {{/each}}
+                </div>
+            </ul>
+        </div>
+
     </div>
-
-    <div class='col-lg-4 card bg-success'>
-        <ul>
-            <div class='card-header'>
-                {{#each activityentries}}
-            </div>
-            <div class='card-body'>
-                    <li>
-                        <p><span>Name:</span> {{this.name}}</p>
-                        <p><span>Total Time:</span> {{this.totalTime}}</p>
-                        <p><span>Activity Notes:</span> {{this.entryActivityText}}</p>
-                    </li>
-                {{/each}}
-            </div>
-        </ul>
-    </div>
-
-    <div class='col-lg-4 card bg-success'>
-        <ul>
-            <div class='card-header'>
-                {{#each nutritionentries}}
-            </div>
-            <div class='card-body'>
-                    <li>
-                    <p><span>Time of Meal:</span> {{this.typeOfMeal}}</p>
-                    <p><span>Ate:</span> {{this.entryNutritionText}}</p>
-                    </li>
-                {{/each}}
-            </div>
-        </ul>
-    </div>
-
 </div>
 
     <script src="script.js" defer></script>

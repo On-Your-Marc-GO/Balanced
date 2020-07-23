@@ -1,21 +1,27 @@
 // Creation of our journalEntry model.
 module.exports = function (sequelize, DataTypes) {
-    const JournalEntry = sequelize.define('JournalEntry', {
-        date: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            validate: {
-                isDate: true,
+    const JournalEntry = sequelize.define(
+        'JournalEntry',
+        {
+            date: {
+                type: DataTypes.DATE,
+                allowNull: false,
+                validate: {
+                    isDate: true,
+                },
+            },
+            title: {
+                type: DataTypes.STRING,
+                allowNull: false,
+                validate: {
+                    notEmpty: true,
+                },
             },
         },
-        title: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                notEmpty: true,
-            },
-        },
-    });
+        {
+            timestamps: false,
+        }
+    );
 
     JournalEntry.associate = function (models) {
         // Associating a Journal Entry with a user.
