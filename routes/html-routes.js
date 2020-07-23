@@ -11,7 +11,7 @@ module.exports = function (app) {
         //     res.redirect('/main'); /* render */
         // }
         // res.sendFile(path.join(__dirname, '../public/main.html'));
-        res.sendFile(path.join(__dirname, '../views/test.html'));
+        res.render('index');
     });
 
     // app.get('/login', (req, res) => {
