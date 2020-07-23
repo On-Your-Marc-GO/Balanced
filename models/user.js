@@ -2,58 +2,64 @@
 const bcrypt = require('bcryptjs');
 // Creation of our User model.
 module.exports = function (sequelize, DataTypes) {
-    const User = sequelize.define('User', {
-        firstName: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1],
+    const User = sequelize.define(
+        'User',
+        {
+            firstName: {
+                type: DataTypes.STRING,
+                allowNull: false,
+                validate: {
+                    len: [1],
+                },
+            },
+            lastName: {
+                type: DataTypes.STRING,
+                allowNull: false,
+                validate: {
+                    len: [1],
+                },
+            },
+            age: {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+                validate: {
+                    isNumeric: true,
+                    isInt: true,
+                },
+            },
+            height: {
+                type: DataTypes.DECIMAL, // NOTE: Height will need to be stored in cm's and then converted on the UI side to represent the regular foot'inches" format we see.
+                allowNull: false,
+                validate: {
+                    isNumeric: true,
+                    isDecimal: true,
+                },
+            },
+            weight: {
+                type: DataTypes.DECIMAL, // NOTE: Height will need to be stored in cm's and then converted on the UI side to represent the regular foot'inches" format we see.
+                allowNull: false,
+                validate: {
+                    isNumeric: true,
+                    isDecimal: true,
+                },
+            },
+            email: {
+                type: DataTypes.STRING,
+                allowNull: false,
+                unique: true,
+                validate: {
+                    isEmail: true,
+                },
+            },
+            password: {
+                type: DataTypes.STRING,
+                allowNull: false,
             },
         },
-        lastName: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1],
-            },
-        },
-        age: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                isNumeric: true,
-                isInt: true,
-            },
-        },
-        height: {
-            type: DataTypes.DECIMAL, // NOTE: Height will need to be stored in cm's and then converted on the UI side to represent the regular foot'inches" format we see.
-            allowNull: false,
-            validate: {
-                isNumeric: true,
-                isDecimal: true,
-            },
-        },
-        weight: {
-            type: DataTypes.DECIMAL, // NOTE: Height will need to be stored in cm's and then converted on the UI side to represent the regular foot'inches" format we see.
-            allowNull: false,
-            validate: {
-                isNumeric: true,
-                isDecimal: true,
-            },
-        },
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: true,
-            },
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-    });
+        {
+            timestamps: false,
+        }
+    );
 
     User.associate = function (models) {
         // Associating a User with their Journal Entries.
