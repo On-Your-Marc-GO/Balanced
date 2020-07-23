@@ -1,0 +1,131 @@
+<div class="container">
+    <form class="journalEntry-create-form">
+        <div class="form-group">
+            <label for="JE-Title">Title:</label> 
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-bars"></i>
+                    </div>
+                </div> 
+                <input id="JE-Title" name="JE-Title" placeholder="Enter Journal Entry Title..." type="text" required="required" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="JE-Date">Date *</label> 
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                </div> 
+                <input id="JE-Date" name="JE-Date" type="text" required="required" class="form-control">
+            </div>
+        </div> 
+    </form>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <button type="button" class="btn btn-primary" data-toggle='modal' data-target='#JEActivityModal'>Add Activity</button>
+            <!-- Activity Entry Modal-->
+            <div class="modal fade" id="JEActivityModal" tabindex="-1" role="dialog" aria-labelledby="JEActivityModal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <h5 class="modal-title" id="ActivityEntryModalLabel">Add Activity Data</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="ActivityTitle">Activity Title:</label>
+                                <input type="text" class="form-control" id="ActivityTitle" placeholder="Title here...">
+                            </div>
+                            <div class="form-group">
+                                <!--This select box will need to be dynamically updated with the categories we are holding in DB table.
+                                will need to be done with jQuery.-->
+                                <label for="CategorySelect">Category Type:</label>
+                                <select class="form-control" id="CategorySelect">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <!--Based on what category is selected, we'll have to prepend the specified form fields to this modal here.-->
+                            <div class="form-group">
+                                <label for="ActivityTime">Total Time Spent:</label>
+                                <input type="text" class="form-control" id="ActivityTime" placeholder="Enter in minutes">
+                            </div>
+                            <div class="form-group">
+                                <label for="ActivityNotes">Activity Notes:</label>
+                                <textarea class="form-control" id="ActivityNotes" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add Entry</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <button type="button" class="btn btn-success" data-toggle='modal' data-target='#JENutritionModal'>Add Nutition Entry</button>
+            <!-- Nutrition Entry Modal-->
+            <div class="modal fade" id="JENutritionModal" tabindex="-1" role="dialog" aria-labelledby="JENutritionModal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="NutirtionEntryModalLabel">Add Nutrition Data</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="MealType">Meal Type:</label>
+                                <input type="text" class="form-control" id="MealType" placeholder="Ex. Lunch, Dinner, Snack....">
+                            </div>
+                            <div class="form-group">
+                                <label for="MealNotes">Meal Notes:</label>
+                                <textarea class="form-control" id="MealNotes" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add Entry</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class='row'>
+        <div class="col-6 JE-Activities-Col">
+            <p>
+                Activities will be prepended here as they are added
+                Most likely Handlebar logic to bring in all Activities
+                pre-rendered as cards?
+            </p>
+        </div>
+        <div class="col-6 JE-Nutition-Col">
+            <p>
+                Nutrition entries will be prepended here as they are added.
+                Same as above. Handlebar logic to bring in all nutrition entries
+                as cards?
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="form-group">
+        <button name="submit" type="submit" class="btn btn-primary">Add Journal Entry</button>
+    </div>
+</div>
