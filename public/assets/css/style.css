@@ -14,3 +14,7 @@
     color: #fff;
     transition: all 0.3s;
 }
+
+ul {
+    list-style-type: none;
+}
