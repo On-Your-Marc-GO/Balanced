@@ -56,26 +56,10 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false,
             },
         },
-<<<<<<< HEAD
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        // created_at: {
-        //     type: DataTypes.DATE,
-        //     defaultValue: sequelize.literal('NOW()'),
-        // },
-        // updated_at: {
-        //     type: DataTypes.DATE,
-        //     defaultValue: sequelize.literal('NOW()'),
-        // },
-    });
-=======
         {
             timestamps: false,
         }
     );
->>>>>>> aca3c24ccc544bd0239a21ae32f7bd49b47ba0f2
 
     User.associate = function (models) {
         // Associating a User with their Journal Entries.
