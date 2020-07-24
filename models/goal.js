@@ -38,7 +38,7 @@ module.exports = function (sequelize, DataTypes) {
         // A goal cannot be cretaed without a user due to foreign key constraint.
         Goal.belongsTo(models.User, {
             foreignKey: {
-                allowNulle: false,
+                allowNull: false,
             },
         });
     };
