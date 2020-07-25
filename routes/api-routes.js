@@ -53,59 +53,6 @@ module.exports = function (app) {
     });
 
     app.get('/data', function (req, res) {
-        // 13.17
-        // db.all(function (data) {
-        //     var hbsObject = {
-        //         journalentries: data,
-        //         activityentries: data,
-        //         nutritionentries: data,
-        //     };
-        //     console.log(hbsObject);
-        //     res.render('data', hbsObject);
-        // });
-        // 14.14
-        var query = {};
-        if (req.query.user_id) {
-            query.UserId = req.query.user_id;
-        }
-        // db.JournalEntry.findAll({
-        // where: UserId=1,
-        //   include: [db.ActivityEntry, db.NutritionEntry],
-        //}).then(function (data) {
-        //  console.log(data[0]);
-        // res.json(data);
-        // res.render('data', data[0]);
-        //});
-        // db.User.findAll({
-        // where: {UserId=1,
-        // include: [
-        //  {
-        //     model: db.JournalEntry,
-        // as: 'JournalEntries',
-        // where: {
-        //     name: 'id',
-        // },
-        //  include: [
-        //     db.ActivityEntry,
-        //     db.NutritionEntry,
-        // {
-        //     model: db.ActivityEntry,
-        //     as: 'ActivityEntries',
-        //     required: false,
-        //     // where: {
-        //     //     name: 'Some section name',
-        //     // },
-        // },
-        //  ],
-        // },
-        // ],
-        //  }).then(function (data) {
-        //   console.log(data[0]);
-        // console.log(data[0].JournalEntries.JournalEntry.ActivityEntries[0]);
-        // res.json(data);
-        //res.render('data', data[0]);
-        // });
-
         db.User.findAll({
             // where: UserId=1,
             include: [db.JournalEntry],
@@ -125,41 +72,6 @@ module.exports = function (app) {
                 res.render('data', { JournalEntries: data });
             });
         });
-
-        // db.JournalEntry.findAll({
-        // where: UserId=1,
-        //   include: [db.ActivityEntry, db.NutritionEntry],
-        //}).then(function (data) {
-        //  console.log(data[0]);
-        // res.json(data);
-        // res.render('data', data[0]);
-        //});
-        // res.render('data');
-        // var dataObject = {
-        //     journalentries: [
-        //         {
-        //             title: 'id',
-        //             date: 'date',
-        //             id: 'id',
-        //         },
-        //     ],
-        //     activityentries: [
-        //         {
-        //             name: 'test',
-        //             totalTime: 'test',
-        //             entryActivityText: 'test',
-        //             JournalEntryId: 'test',
-        //         },
-        //     ],
-        //     nutritionentries: [
-        //         {
-        //             entryNutrictionText: 'test',
-        //             typeOfMeal: 'test',
-        //             JournalEntryId: 'test',
-        //         },
-        //     ],
-        // };
-        // res.render('data', dataObject);
     });
 
     app.get('/userProfile', (req, res) => {
