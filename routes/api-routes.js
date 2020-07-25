@@ -76,35 +76,64 @@ module.exports = function (app) {
         // res.json(data);
         // res.render('data', data[0]);
         //});
+        // db.User.findAll({
+        // where: {UserId=1,
+        // include: [
+        //  {
+        //     model: db.JournalEntry,
+        // as: 'JournalEntries',
+        // where: {
+        //     name: 'id',
+        // },
+        //  include: [
+        //     db.ActivityEntry,
+        //     db.NutritionEntry,
+        // {
+        //     model: db.ActivityEntry,
+        //     as: 'ActivityEntries',
+        //     required: false,
+        //     // where: {
+        //     //     name: 'Some section name',
+        //     // },
+        // },
+        //  ],
+        // },
+        // ],
+        //  }).then(function (data) {
+        //   console.log(data[0]);
+        // console.log(data[0].JournalEntries.JournalEntry.ActivityEntries[0]);
+        // res.json(data);
+        //res.render('data', data[0]);
+        // });
+
         db.User.findAll({
-            // where: {UserId=1,
-            include: [
-                {
-                    model: db.JournalEntry,
-                    // as: 'JournalEntries',
-                    // where: {
-                    //     name: 'id',
-                    // },
-                    include: [
-                        db.ActivityEntry,
-                        db.NutritionEntry,
-                        // {
-                        //     model: db.ActivityEntry,
-                        //     as: 'ActivityEntries',
-                        //     required: false,
-                        //     // where: {
-                        //     //     name: 'Some section name',
-                        //     // },
-                        // },
-                    ],
-                },
-            ],
-        }).then(function (data) {
-            console.log(data[0]);
-            // console.log(data[0].JournalEntries.JournalEntry.ActivityEntries[0]);
-            // res.json(data);
-            res.render('data', data[0]);
+            // where: UserId=1,
+            include: [db.JournalEntry],
+        }).then(function (JournalEntryData) {
+            console.log(JournalEntryData);
+            db.JournalEntry.findAll({
+                // where: UserId=1,
+                include: [db.ActivityEntry, db.NutritionEntry],
+            }).then(function (data) {
+                //  console.log(data[0]);
+                // res.json(data);
+                let hbsObject = {
+                    // journalentries: JournalEntryData,
+                    activityentries: data[0].ActivityEntries,
+                    nutritionentries: data[0].NutritionEntries,
+                };
+                res.render('data', { JournalEntries: data });
+            });
         });
+
+        // db.JournalEntry.findAll({
+        // where: UserId=1,
+        //   include: [db.ActivityEntry, db.NutritionEntry],
+        //}).then(function (data) {
+        //  console.log(data[0]);
+        // res.json(data);
+        // res.render('data', data[0]);
+        //});
         // res.render('data');
         // var dataObject = {
         //     journalentries: [

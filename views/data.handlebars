@@ -17,15 +17,15 @@
                 </div>
                 <div class='card-body'>
                         <li>
-                            <p><span>ID:</span> {{this.dataValues.id}}</p>
-                            <p><span>Date:</span> {{this.dataValues.date}}</p>
-                            <p><span>Title:</span> {{this.dataValues.title}}</p>
+                            <p><strong>ID:</strong> {{this.dataValues.id}}</p>
+                            <p><strong>Date:</strong> {{this.dataValues.date}}</p>
+                            <p><strong>Title:</strong> {{this.dataValues.title}}</p>
                         </li>
-                        {{#each this.ActivityEntries}}
+                        {{#each this.ActivityEntries}} 
                             <li>
-                                <p><span>Name:</span> {{ActivityEntry}}</p>
-                                <p><span>Total Time:</span> {{this.totalTime}}</p>
-                                <p><span>Activity Notes:</span> {{this.entryActivityText}}</p>
+                                <p><strong>Name:</strong> {{this.dataValues.name}}</p>
+                                <p><strong>Total Time:</strong> {{this.dataValues.totalTime}}</p>
+                                <p><strong>Activity Notes:</strong> {{this.dataValues.entryActivityText}}</p>
                             </li>
                         {{/each}}
                     {{/each}}
@@ -40,9 +40,9 @@
                 </div>
                 <div class='card-body'>
                         <li>
-                            <p><span>Name:</span> {{this.name}}</p>
-                            <p><span>Total Time:</span> {{this.totalTime}}</p>
-                            <p><span>Activity Notes:</span> {{this.entryActivityText}}</p>
+                            <p><strong>Name:</strong> {{this.dataValues.name}}</p>
+                            <p><strong>Total Time:</strong> {{this.dataValues.totalTime}}</p>
+                            <p><strong>Activity Notes:</strong> {{this.dataValues.entryActivityText}}</p>
                         </li>
                     {{/each}}
                 </div>
@@ -56,8 +56,8 @@
                 </div>
                 <div class='card-body'>
                         <li>
-                        <p><span>Time of Meal:</span> {{this.typeOfMeal}}</p>
-                        <p><span>Ate:</span> {{this.entryNutritionText}}</p>
+                        <p><strong>Time of Meal:</strong> {{this.typeOfMeal}}</p>
+                        <p><strong>Ate:</strong> {{this.entryNutritionText}}</p>
                         </li>
                     {{/each}}
                 </div>
