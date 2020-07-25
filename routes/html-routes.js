@@ -2,6 +2,7 @@
 //const path = require('path');
 
 const db = require('../models');
+const { Runner } = require('mocha');
 
 // Requiring our custom middleware for checking if a user is logged in
 // const isAuthenticated = require('../config/middleware/isAuthenticated');
@@ -58,19 +59,44 @@ module.exports = function (app) {
         //     res.render('data', hbsObject);
         // });
         // 14.14
-        // var query = {};
-        // if (req.query.user_id) {
-        //     query.UserId = req.query.user_id;
-        // }
+        var query = {};
+        if (req.query.user_id) {
+            query.UserId = req.query.user_id;
+        }
         // db.journalentries
-        //     .findOne({
-        //         where: query,
-        //         include: [db.activityentries],
-        //     })
-        //     .then(function (dbJournalentries) {
-        //         res.json(dbJournalentries);
-        //     });
-        res.render('data');
+        // .findAll({
+        //     where: UserId=1,
+        //     include: [db.activityentries],
+        // })
+        // .then(function (dbJournalentries) {
+        //     res.json(dbJournalentries);
+        // });
+        // res.render('data');
+        var dataObject = {
+            journalentries: [
+                {
+                    title: 'id',
+                    date: 'date',
+                    id: 'id',
+                },
+            ],
+            activityentries: [
+                {
+                    name: 'test',
+                    totalTime: 'test',
+                    entryActivityText: 'test',
+                    JournalEntryId: 'test',
+                },
+            ],
+            nutritionentries: [
+                {
+                    entryNutrictionText: 'test',
+                    typeOfMeal: 'test',
+                    JournalEntryId: 'test',
+                },
+            ],
+        };
+        res.render('data', dataObject);
     });
 
     app.get('/userProfile', (req, res) => {
