@@ -46,8 +46,9 @@ module.exports = function (app) {
     //     res.sendFile(path.join(__dirname, '../public/data.html'));
     // });
 
-    app.get('/data', (req, res) => {
-        // db.create(function (data) {
+    app.get('/data', function (req, res) {
+        // 13.17
+        // db.all(function (data) {
         //     var hbsObject = {
         //         journalentries: data,
         //         activityentries: data,
@@ -56,10 +57,23 @@ module.exports = function (app) {
         //     console.log(hbsObject);
         //     res.render('data', hbsObject);
         // });
+        // 14.14
+        // var query = {};
+        // if (req.query.user_id) {
+        //     query.UserId = req.query.user_id;
+        // }
+        // db.journalentries
+        //     .findOne({
+        //         where: query,
+        //         include: [db.activityentries],
+        //     })
+        //     .then(function (dbJournalentries) {
+        //         res.json(dbJournalentries);
+        //     });
         res.render('data');
     });
 
-    app.get('/goalEntry', (req, res) => {
-        res.render('goalEntry');
+    app.get('/userProfile', (req, res) => {
+        res.render('userProfile');
     });
 };
