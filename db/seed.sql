@@ -16,10 +16,12 @@ SELECT * FROM users;
 -- 	VALUES (xxxxx);
 
 INSERT INTO users (firstName, lastName, age, height, weight, email, password)
-	VALUES ("Forrest", "Gump", 40, 6, 200, "forrestgump@test.com", "test");
+	-- VALUES ("Forrest", "Gump", 40, 6, 200, "forrestgump@test.com", "test");
+    VALUES ("koan", "loc", 36, 5, 150, "koanloc@test.com", "testing");
 
 INSERT INTO journalentries (date, title, UserID)
-	VALUES (DATE "2020-07-01", "runner", 1);
+	-- VALUES (DATE "2020-07-01", "runner", 1);
+    VALUES (DATE "2020-07-01", "biking", 2);
 
 INSERT INTO nutritionentries (entryNutritionText, typeOfMeal, JournalEntryId)
 	VALUES ("eggs","breakfast", 1);
@@ -28,7 +30,8 @@ INSERT INTO categories (categoryName, metrics)
 	VALUES ("running", "running");
 
 INSERT INTO activityentries (name, totalTime, entryActivityText, JournalEntryId, CategoryId)
-	VALUES ("running", 60, "Central Park", 1, 1);
+	-- VALUES ("running", 60, "Central Park", 1, 1);
+    VALUES ("biking", 30, "Park", 2, 2);
 
 INSERT INTO goals (goalType, totalTimeAccrued, goalTime, UserId)
 	VALUES ("wieghtloss", 60, 100, 1);

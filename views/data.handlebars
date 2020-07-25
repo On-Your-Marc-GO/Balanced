@@ -13,14 +13,21 @@
         <div class='col-lg-4 card bg-success'>
             <ul>
                 <div class='card-header'>
-                    {{#each journalentries}}
+                    {{#each JournalEntries}}
                 </div>
                 <div class='card-body'>
                         <li>
-                            <p><span>ID:</span> {{this.id}}</p>
-                            <p><span>Date:</span> {{this.date}}</p>
-                            <p><span>Title:</span> {{this.title}}</p>
+                            <p><span>ID:</span> {{this.dataValues.id}}</p>
+                            <p><span>Date:</span> {{this.dataValues.date}}</p>
+                            <p><span>Title:</span> {{this.dataValues.title}}</p>
                         </li>
+                        {{#each this.ActivityEntries}}
+                            <li>
+                                <p><span>Name:</span> {{ActivityEntry}}</p>
+                                <p><span>Total Time:</span> {{this.totalTime}}</p>
+                                <p><span>Activity Notes:</span> {{this.entryActivityText}}</p>
+                            </li>
+                        {{/each}}
                     {{/each}}
                 </div>
             </ul>
@@ -29,7 +36,7 @@
         <div class='col-lg-4 card bg-success'>
             <ul>
                 <div class='card-header'>
-                    {{#each activityentries}}
+                    {{#each ActivityEntries}}
                 </div>
                 <div class='card-body'>
                         <li>
@@ -45,7 +52,7 @@
         <div class='col-lg-4 card bg-success'>
             <ul>
                 <div class='card-header'>
-                    {{#each nutritionentries}}
+                    {{#each NutritionEntries}}
                 </div>
                 <div class='card-body'>
                         <li>
