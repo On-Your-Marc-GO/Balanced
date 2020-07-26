@@ -64,7 +64,7 @@ module.exports = function (app) {
             }).then((data) => {
                 //  console.log(data[0]);
                 // res.json(data);
-                var hbsObject = {
+                const hbsObject = {
                     // journalentries: JournalEntryData,
                     activityentries: data[0].ActivityEntries,
                     nutritionentries: data[0].NutritionEntries,
