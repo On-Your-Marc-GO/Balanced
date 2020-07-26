@@ -12,16 +12,18 @@
     <div class='row'>
         <div class='col-lg-12 card bg-success'>
             <ul>
-                <div class='card-header'>
+                {{!-- <div class='card-header'>
                     {{#each JournalEntries}}
-                </div>
-                <div class='card-body'>
-                        <li>
+                </div> --}}
+                    {{#each JournalEntries}}
+                        <div class='col-lg-4'>
+                            <li>
                             <p><strong>ID:</strong> {{this.dataValues.id}}</p>
                             <p><strong>Date:</strong> {{this.dataValues.date}}</p>
                             <p><strong>Title:</strong> {{this.dataValues.title}}</p>
-                        </li>
-                        <div class='card-body col-lg-4'>
+                            </li>
+                        </div>
+                        <div class='col-lg-4 bg-warning'>
                             {{#each this.ActivityEntries}} 
                                 <li>
                                     <p><strong>Name:</strong> {{this.dataValues.name}}</p>
@@ -30,8 +32,15 @@
                                 </li>
                             {{/each}}
                         </div>
+                        <div class='col-lg-4 bg-danger'>
+                            {{#each this.NutritionEntries}} 
+                                <li>
+                                    <p><strong>Time of Meal:</strong> {{this.dataValues.typeOfMeal}}</p>
+                                    <p><strong>Ate:</strong> {{this.dataValues.entryNutritionText}}</p>
+                                </li>
+                            {{/each}}
+                        </div>
                     {{/each}}
-                </div>
             </ul>
         </div>
 

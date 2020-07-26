@@ -10,13 +10,13 @@ module.exports = function (app) {
         res.render('index');
     });
 
-    app.get('/data', (req, res) => {
-        // If the user already has an account send them to the index page
-        if (req.user) {
-            res.render('data');
-        }
-        res.render('data');
-    });
+    // app.get('/data', (req, res) => {
+    //     // If the user already has an account send them to the index page
+    //     if (req.user) {
+    //         res.render('data');
+    //     }
+    //     res.render('data');
+    // });
 
     app.get('/goalEntry', (req, res) => {
         // If the user already has an account send them to the index page
