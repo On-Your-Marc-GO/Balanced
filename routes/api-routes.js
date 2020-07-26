@@ -106,25 +106,25 @@ module.exports = function (app) {
         //res.render('data', data[0]);
         // });
 
-        db.User.findAll({
-            // where: UserId=1,
-            include: [db.JournalEntry],
-         }).then(function (JournalEntryData) {
-             console.log(JournalEntryData);
-            db.JournalEntry.findAll({
-                // where: UserId=1,
-                include: [db.ActivityEntry, db.NutritionEntry],
-             }.then(function (data) {
-                //  console.log(data[0]);
-                 res.json(data);
-                // const hbsObject = {
-                    // journalentries: JournalEntryData,
-                    activityentries: data[0].ActivityEntries,
-                    // nutritionentries: data[0].NutritionEntries,
-                }; 
-                res.render('data', { JournalEntries: data });
-            });
-        });
+        //  //       db.User.findAll({
+        //             // where: UserId=1,
+        //             include: [db.JournalEntry],
+        //          }).then(function (JournalEntryData) {
+        //              console.log(JournalEntryData);
+        //             db.JournalEntry.findAll({
+        //                 // where: UserId=1,
+        //                 include: [db.ActivityEntry, db.NutritionEntry],
+        //              }.then(function (data) {
+        //                 //  console.log(data[0]);
+        //                  res.json(data);
+        //                 // const hbsObject = {
+        //                     // journalentries: JournalEntryData,
+        //                     activityentries: data[0].ActivityEntries,
+        //                     // nutritionentries: data[0].NutritionEntries,
+        //                 });
+        //                 res.render('data', { JournalEntries: data });
+        //             });
+        //         });
 
         // db.JournalEntry.findAll({
         // where: UserId=1,
@@ -162,7 +162,6 @@ module.exports = function (app) {
         // res.render('data', dataObject);
     });
 
-    app.get('/userProfile', (req, res) => {
-        res.render('userProfile');
-    });
+    // app.get('/userProfile', (req, res) => {
+    //     res.render('userProfile');
 };
