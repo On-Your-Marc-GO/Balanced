@@ -6,6 +6,14 @@ ul {
     margin-top: 5vh;
 }
 
+.rounded {
+    border-radius: 10px;
+}
+
+.btn {
+    box-shadow: 10 px 10px 5px grey;
+}
+
 .sidebar-expanded {
     width: 230px;
 }
