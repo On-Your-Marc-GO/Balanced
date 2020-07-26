@@ -4,9 +4,9 @@ $('#body-row .collapse').collapse('hide');
 $('#collapse-icon').addClass('fa-angle-double-left');
 
 // Collapse click
-$('[data-toggle=sidebar-colapse]').click(function () {
-    SidebarCollapse();
-});
+// $('[data-toggle=sidebar-colapse]').click(function () {
+//    SidebarCollapse();
+// });
 
 const SeparatorTitle = $('.sidebar-separator-title');
 

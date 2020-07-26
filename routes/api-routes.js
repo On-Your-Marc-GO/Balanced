@@ -109,15 +109,15 @@ module.exports = function (app) {
         db.User.findAll({
             // where: UserId=1,
             include: [db.JournalEntry],
-        }).then(function (JournalEntryData) {
+        // }).then(function (JournalEntryData) {
             console.log(JournalEntryData);
             db.JournalEntry.findAll({
                 // where: UserId=1,
                 include: [db.ActivityEntry, db.NutritionEntry],
-            }).then(function (data) {
+            // }).then(function (data) {
                 //  console.log(data[0]);
                 // res.json(data);
-                const hbsObject = {
+                // const hbsObject = {
                     // journalentries: JournalEntryData,
                     activityentries: data[0].ActivityEntries,
                     nutritionentries: data[0].NutritionEntries,
