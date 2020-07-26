@@ -52,16 +52,16 @@ module.exports = function (app) {
         }
     });
 
-    app.get('/data', function (req, res) {
+    app.get('/data', (req, res) => {
         db.User.findAll({
             // where: UserId=1,
             include: [db.JournalEntry],
-        }).then(function (JournalEntryData) {
+        }).then( JournalEntryData) => {
             console.log(JournalEntryData);
             db.JournalEntry.findAll({
                 // where: UserId=1,
                 include: [db.ActivityEntry, db.NutritionEntry],
-            }).then(function (data) {
+            }).then (data) => {
                 //  console.log(data[0]);
                 // res.json(data);
                 let hbsObject = {
