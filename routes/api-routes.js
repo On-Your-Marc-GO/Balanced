@@ -159,7 +159,7 @@ module.exports = function (app) {
         //         },
         //     ],
         // };
-        // res.render('data', dataObject);
+        res.render('data', dataObject);
     });
 
     // app.get('/userProfile', (req, res) => {
