@@ -114,14 +114,14 @@ module.exports = function (app) {
             db.JournalEntry.findAll({
                 // where: UserId=1,
                 include: [db.ActivityEntry, db.NutritionEntry],
-             }).then(function (data) {
+             }.then(function (data) {
                 //  console.log(data[0]);
                  res.json(data);
                 // const hbsObject = {
                     // journalentries: JournalEntryData,
                     activityentries: data[0].ActivityEntries,
                     // nutritionentries: data[0].NutritionEntries,
-                };
+                }; 
                 res.render('data', { JournalEntries: data });
             });
         });
