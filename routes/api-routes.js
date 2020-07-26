@@ -52,7 +52,7 @@ module.exports = function (app) {
         }
     });
 
-    app.get('/data', function (req, res) {
+    app.get('/data', (req, res) => {
         // 13.17
         // db.all(function (data) {
         //     var hbsObject = {
@@ -64,7 +64,7 @@ module.exports = function (app) {
         //     res.render('data', hbsObject);
         // });
         // 14.14
-        var query = {};
+        const query = {};
         if (req.query.user_id) {
             query.UserId = req.query.user_id;
         }
@@ -106,25 +106,25 @@ module.exports = function (app) {
         //res.render('data', data[0]);
         // });
 
-        db.User.findAll({
-            // where: UserId=1,
-            include: [db.JournalEntry],
-        }).then(function (JournalEntryData) {
-            console.log(JournalEntryData);
-            db.JournalEntry.findAll({
-                // where: UserId=1,
-                include: [db.ActivityEntry, db.NutritionEntry],
-            }).then(function (data) {
-                //  console.log(data[0]);
-                // res.json(data);
-                let hbsObject = {
-                    // journalentries: JournalEntryData,
-                    activityentries: data[0].ActivityEntries,
-                    nutritionentries: data[0].NutritionEntries,
-                };
-                res.render('data', { JournalEntries: data });
-            });
-        });
+        //  //       db.User.findAll({
+        //             // where: UserId=1,
+        //             include: [db.JournalEntry],
+        //          }).then(function (JournalEntryData) {
+        //              console.log(JournalEntryData);
+        //             db.JournalEntry.findAll({
+        //                 // where: UserId=1,
+        //                 include: [db.ActivityEntry, db.NutritionEntry],
+        //              }.then(function (data) {
+        //                 //  console.log(data[0]);
+        //                  res.json(data);
+        //                 // const hbsObject = {
+        //                     // journalentries: JournalEntryData,
+        //                     activityentries: data[0].ActivityEntries,
+        //                     // nutritionentries: data[0].NutritionEntries,
+        //                 });
+        //                 res.render('data', { JournalEntries: data });
+        //             });
+        //         });
 
         // db.JournalEntry.findAll({
         // where: UserId=1,
@@ -159,10 +159,9 @@ module.exports = function (app) {
         //         },
         //     ],
         // };
-        // res.render('data', dataObject);
+        res.render('data', dataObject);
     });
 
-    app.get('/userProfile', (req, res) => {
-        res.render('userProfile');
-    });
+    // app.get('/userProfile', (req, res) => {
+    //     res.render('userProfile');
 };
