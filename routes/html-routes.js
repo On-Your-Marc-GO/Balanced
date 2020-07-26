@@ -5,9 +5,9 @@ module.exports = function (app) {
     app.get('/', (req, res) => {
         // If the user already has an account send them to the members page
         if (req.user) {
-            res.render('index');
+            res.render('signup');
         }
-        res.render('index');
+        res.render('signup');
     });
 
     // app.get('/data', (req, res) => {
@@ -21,19 +21,19 @@ module.exports = function (app) {
     app.get('/goalEntry', (req, res) => {
         // If the user already has an account send them to the index page
         if (req.user) {
-            res.render('index');
+            res.render('goalEntry');
         }
         res.render('goalEntry');
     });
 
-    app.get('/index', isAuthenticated, (req, res) => {
-        res.render('index');
-    });
+    // app.get('/index', isAuthenticated, (req, res) => {
+    //     res.render('index');
+    // });
 
     app.get('/journalEntry', (req, res) => {
         // If the user already has an account send them to the index page
         if (req.user) {
-            res.render('index');
+            res.render('journalEntry');
         }
         res.render('journalEntry');
     });
@@ -41,7 +41,7 @@ module.exports = function (app) {
     app.get('/login', (req, res) => {
         // If the user already has an account send them to the index page
         if (req.user) {
-            res.render('index');
+            res.render('login');
         }
         res.render('login');
     });
@@ -49,7 +49,7 @@ module.exports = function (app) {
     app.get('/signup', (req, res) => {
         // If the user already has an account send them to the index page
         if (req.user) {
-            res.render('index');
+            res.render('signup');
         }
         res.render('signup');
     });
