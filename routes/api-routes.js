@@ -56,12 +56,12 @@ module.exports = function (app) {
         db.User.findAll({
             // where: UserId=1,
             include: [db.JournalEntry],
-        }).then( JournalEntryData) => {
+        }).then((JournalEntryData) => {
             console.log(JournalEntryData);
             db.JournalEntry.findAll({
                 // where: UserId=1,
                 include: [db.ActivityEntry, db.NutritionEntry],
-            }).then (data) => {
+            }).then((data) => {
                 //  console.log(data[0]);
                 // res.json(data);
                 let hbsObject = {
