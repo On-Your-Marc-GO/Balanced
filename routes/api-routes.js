@@ -120,7 +120,7 @@ module.exports = function (app) {
                 // const hbsObject = {
                     // journalentries: JournalEntryData,
                     activityentries: data[0].ActivityEntries,
-                    nutritionentries: data[0].NutritionEntries,
+                    // nutritionentries: data[0].NutritionEntries,
                 };
                 res.render('data', { JournalEntries: data });
             });
