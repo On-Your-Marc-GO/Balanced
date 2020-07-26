@@ -10,7 +10,7 @@
 <hr />
 
     <div class='row'>
-        <div class='col-lg-4 card bg-success'>
+        <div class='col-lg-12 card bg-success'>
             <ul>
                 <div class='card-header'>
                     {{#each JournalEntries}}
@@ -21,19 +21,21 @@
                             <p><strong>Date:</strong> {{this.dataValues.date}}</p>
                             <p><strong>Title:</strong> {{this.dataValues.title}}</p>
                         </li>
-                        {{#each this.ActivityEntries}} 
-                            <li>
-                                <p><strong>Name:</strong> {{this.dataValues.name}}</p>
-                                <p><strong>Total Time:</strong> {{this.dataValues.totalTime}}</p>
-                                <p><strong>Activity Notes:</strong> {{this.dataValues.entryActivityText}}</p>
-                            </li>
-                        {{/each}}
+                        <div class='card-body col-lg-4'>
+                            {{#each this.ActivityEntries}} 
+                                <li>
+                                    <p><strong>Name:</strong> {{this.dataValues.name}}</p>
+                                    <p><strong>Total Time:</strong> {{this.dataValues.totalTime}}</p>
+                                    <p><strong>Activity Notes:</strong> {{this.dataValues.entryActivityText}}</p>
+                                </li>
+                            {{/each}}
+                        </div>
                     {{/each}}
                 </div>
             </ul>
         </div>
 
-        <div class='col-lg-4 card bg-success'>
+        {{!-- <div class='col-lg-4 card bg-success'>
             <ul>
                 <div class='card-header'>
                     {{#each ActivityEntries}}
@@ -62,7 +64,7 @@
                     {{/each}}
                 </div>
             </ul>
-        </div>
+        </div> --}}
 
     </div>
 </div>
