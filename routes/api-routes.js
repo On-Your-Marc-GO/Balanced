@@ -64,11 +64,11 @@ module.exports = function (app) {
             }).then((data) => {
                 //  console.log(data[0]);
                 // res.json(data);
-                const hbsObject = {
-                    // journalentries: JournalEntryData,
-                    activityentries: data[0].ActivityEntries,
-                    nutritionentries: data[0].NutritionEntries,
-                };
+                // const hbsObject = {
+                //     // journalentries: JournalEntryData,
+                //     activityentries: data[0].ActivityEntries,
+                //     nutritionentries: data[0].NutritionEntries,
+                // };
                 res.render('data', { JournalEntries: data });
             });
         });
