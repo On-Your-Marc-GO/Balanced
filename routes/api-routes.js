@@ -74,7 +74,6 @@ module.exports = function (app) {
         });
     });
 
-    app.get('/userProfile', (req, res) => {
-        res.render('userProfile');
-    });
+    // app.get('/userProfile', (req, res) => {
+    //     res.render('userProfile');
 };
