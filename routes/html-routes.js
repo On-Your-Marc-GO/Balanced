@@ -54,11 +54,11 @@ module.exports = function (app) {
         res.render('signup');
     });
 
-    app.get('/userProfile', (req, res) => {
-        // If the user already has an account send them to the index page
-        if (req.user) {
-            res.render('index');
-        }
-        res.render('userProfile');
-    });
+    // app.get('/userProfile', (req, res) => {
+    //     // If the user already has an account send them to the index page
+    //     if (req.user) {
+    //         res.render('index');
+    //     }
+    //     res.render('userProfile');
+    // });
 };
