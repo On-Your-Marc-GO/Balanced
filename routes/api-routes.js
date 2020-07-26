@@ -110,7 +110,7 @@ module.exports = function (app) {
             // where: UserId=1,
             include: [db.JournalEntry],
         // }).then(function (JournalEntryData) {
-            console.log(JournalEntryData);
+            // console.log(JournalEntryData);
             db.JournalEntry.findAll({
                 // where: UserId=1,
                 include: [db.ActivityEntry, db.NutritionEntry],
