@@ -74,6 +74,13 @@ module.exports = function (app) {
         });
     });
 
-    // app.get('/userProfile', (req, res) => {
-    //     res.render('userProfile');
+    app.get('/userProfile', (req, res) => {
+        db.User.findAll({
+            /* include: [db.Goal], does not need to include another database */
+        }).then((dbUser) => {
+            res.render('userProfile', { Users: dbUser });
+            // res.json(dbUser);
+            console.log(dbUser);
+        });
+    });
 };

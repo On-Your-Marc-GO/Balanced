@@ -57,7 +57,7 @@ module.exports = function (app) {
     // app.get('/userProfile', (req, res) => {
     //     // If the user already has an account send them to the index page
     //     if (req.user) {
-    //         res.render('index');
+    //         res.render('login');
     //     }
     //     res.render('userProfile');
     // });
