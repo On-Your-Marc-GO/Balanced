@@ -31,11 +31,14 @@ $(document).ready(() => {
             password: password,
         })
             .then(() => {
-                window.location.replace('/index');
+                window.location.replace('/dashboard');
                 // If there's an error, log the error
             })
-            .catch((err) => {
-                console.log(err);
-            });
+            .catch(handleLoginErr);
+    }
+
+    function handleLoginErr(err) {
+        $('#alert .msg').text(JSON.stringify(err.responseJSON));
+        $('#alert').fadeIn(500);
     }
 });

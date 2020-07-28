@@ -36,6 +36,55 @@ module.exports = function (app) {
             });
     });
 
+    // journal entry
+    app.post('/journalEntry', (req, res) => {
+        db.journalEntry
+            .create({
+                date: req.body.date,
+                title: req.body.title,
+            })
+            .then(() => {
+                // res.redirect(307, '/api/login');
+                res.render('journalEntry');
+            })
+            .catch((err) => {
+                res.status(401).json(err);
+            });
+    });
+
+    // activity entry
+    app.post('/activityEntry', (req, res) => {
+        db.activityEntry
+            .create({
+                name: req.body.name,
+                totalTime: req.body.totalTime,
+                entryActivityText: req.body.entryActivityText,
+            })
+            .then(() => {
+                // res.redirect(307, '/api/login');
+                res.render('activityEntry');
+            })
+            .catch((err) => {
+                res.status(401).json(err);
+            });
+    });
+
+    // nutrition entry
+    app.post('/nutritionEntry', (req, res) => {
+        db.nutritionEntry
+            .create({
+                entryNutritionText: req.body.entryNutritionText,
+                typeOfMeal: req.body.typeOfMeal,
+            })
+            .then(() => {
+                // res.redirect(307, '/api/login');
+                res.render('activityEntry');
+            })
+            .catch((err) => {
+                res.status(401).json(err);
+            });
+    });
+
     // Route for logging user out
     app.get('/logout', (req, res) => {
         req.logout();
@@ -58,8 +107,9 @@ module.exports = function (app) {
     });
 
     app.get('/data', (req, res) => {
-        db.User.findAll({
-            // where: UserId=1,
+        console.log(req.user);
+        db.User.findOne({
+            where: { id: req.user.id },
             include: [db.JournalEntry],
         }).then((JournalEntryData) => {
             console.log(JournalEntryData);
@@ -67,25 +117,20 @@ module.exports = function (app) {
                 // where: UserId=1,
                 include: [db.ActivityEntry, db.NutritionEntry],
             }).then((data) => {
-                //  console.log(data[0]);
-                // res.json(data);
-                // const hbsObject = {
-                //     // journalentries: JournalEntryData,
-                //     activityentries: data[0].ActivityEntries,
-                //     nutritionentries: data[0].NutritionEntries,
-                // };
                 res.render('data', { JournalEntries: data });
             });
         });
     });
 
     app.get('/userProfile', (req, res) => {
-        db.User.findAll({
-            /* include: [db.Goal], does not need to include another database */
+        console.log(req.user);
+        db.User.findOne({
+            where: {
+                id: req.user.id,
+            } /* include: [db.Goal], does not need to include another database */,
         }).then((dbUser) => {
-            res.render('userProfile', { Users: dbUser });
-            // res.json(dbUser);
-            console.log(dbUser);
+            console.log(132, dbUser.email);
+            res.render('userProfile', dbUser);
         });
     });
 };
