@@ -1,13 +1,13 @@
 /*eslint arrow-body-style: ["error", "as-needed"]*/
 /*eslint-env es6*/
-$(document).ready(function () {
+$(document).ready(() => {
     // Getting references to our form and input
     const signUpForm = $('form.signup');
     const emailInput = $('input#email-input');
     const passwordInput = $('input#password-input');
 
     // When the signup button is clicked, we validate the email and password are not blank
-    signUpForm.on('submit', function (event) {
+    signUpForm.on('submit', (event) => {
         const userData = {
             email: emailInput.val().trim(),
             password: passwordInput.val().trim(),
@@ -31,7 +31,7 @@ $(document).ready(function () {
             email: email,
             password: password,
         })
-            .then(function (data) {
+            .then((data) => {
                 window.location.replace('/data');
                 // If there's an error, handle it by throwing up a bootstrap alert
             })
