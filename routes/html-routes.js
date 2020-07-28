@@ -1,5 +1,5 @@
 // Requiring our custom middleware for checking if a user is logged in
-// const isAuthenticated = require('../config/middleware/isAuthenticated');
+const isAuthenticated = require('../config/middleware/isAuthenticated');
 
 module.exports = function (app) {
     app.get('/', (req, res) => {
@@ -52,9 +52,9 @@ module.exports = function (app) {
 
     app.get('/userProfile', (req, res) => {
         // If the user already has an account send them to the index page
-        if (req.user) {
-            res.render('dashboard');
+        if (!req.user) {
+            return res.render('login');
         }
-        res.render('dashboard');
+        return res.render('userProfile');
     });
 };
