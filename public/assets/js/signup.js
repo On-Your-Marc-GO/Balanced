@@ -3,23 +3,54 @@
 $(document).ready(() => {
     // Getting references to our form and input
     const signUpForm = $('form.signup');
-    const emailInput = $('input#email-input');
-    const passwordInput = $('input#password-input');
+    const firstNameInput = $('input#firstName');
+    const lastNameInput = $('input#lastName');
+    const ageInput = $('input#age');
+    const heightInput = $('input#height');
+    const weightInput = $('input#weight');
+    const emailInput = $('input#email');
+    const passwordInput = $('input#password');
 
     // When the signup button is clicked, we validate the email and password are not blank
     signUpForm.on('submit', (event) => {
+        event.preventDefault();
+
         const userData = {
+            firstName: firstNameInput.val().trim(),
+            lastName: lastNameInput.val().trim(),
+            age: ageInput.val().trim(),
+            height: heightInput.val().trim(),
+            weight: weightInput.val().trim(),
             email: emailInput.val().trim(),
             password: passwordInput.val().trim(),
         };
 
-        event.preventDefault();
-
-        if (!userData.email || !userData.password) {
+        if (
+            !userData.firstName ||
+            !userData.lastName ||
+            !userData.age ||
+            !userData.height ||
+            !userData.weight ||
+            !userData.email ||
+            !userData.password
+        ) {
             return;
         }
         // If we have an email and password, run the signUpUser function
-        signUpUser(userData.email, userData.password);
+        signUpUser(
+            userData.firstName,
+            userData.lastName,
+            userData.age,
+            userData.height,
+            userData.weight,
+            userData.email,
+            userData.password
+        );
+        firstNameInput.val('');
+        lastNameInput.val('');
+        ageInput.val('');
+        heightInput.val('');
+        weightInput.val('');
         emailInput.val('');
         passwordInput.val('');
     });
@@ -28,11 +59,16 @@ $(document).ready(() => {
     // Otherwise we log any errors
     function signUpUser(email, password) {
         $.post('/signup', {
+            firstName: firstName,
+            lastName: lastName,
+            age: age,
+            height: height,
+            weight: weight,
             email: email,
             password: password,
         })
-            .then(() => {
-                window.location.replace('/data');
+            .then((data) => {
+                window.location.replace('/dashboard');
                 // If there's an error, handle it by throwing up a bootstrap alert
             })
             .catch(handleLoginErr);
