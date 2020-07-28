@@ -6,6 +6,19 @@ ul {
     margin-top: 5vh;
 }
 
+.menu-collapsed {
+    font-family: 'Monotone', cursive;
+    font-weight: 400;
+    color: whitesmoke;
+}
+
+.navbar {
+    background: #3f51b5 !important;
+}
+.nav-link {
+    font-family: 'Monotone', cursive;
+}
+
 .rounded {
     border-radius: 10px;
 }
@@ -33,6 +46,7 @@ ul {
     background-color: #333;
     height: 25px;
 }
+
 .logo-separator {
     background-color: #333;
     height: 60px;

@@ -15,6 +15,7 @@
             integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
             crossorigin="anonymous"
         />
+        <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@300&display=swap" rel="stylesheet">
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -39,24 +40,12 @@
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
-                <img
-                    src="/assets/img/yingyang.jpg"
-                    width="30"
-                    height="30"
-                    class="d-inline-block align-top"
-                    alt=""
-                />
-                <span class="menu-collapsed">Balance</span>
+                <span class="menu-collapsed">B A L A N C E</span>
             </a>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#top"
-                            >Home <span class="sr-only">(current)</span></a
-                        >
-                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#top">LOG IN</a>
+                        <a class="nav-link" href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
                     </li>
                     <!-- This menu is hidden in bigger devices with d-sm-none. -->
            
@@ -69,7 +58,7 @@
                             aria-haspopup="true"
                             aria-expanded="false"
                         >
-                            Menu
+                        Menu
                         </a>
                         <div
                             class="dropdown-menu"
@@ -77,8 +66,8 @@
                         >
                             <a class="dropdown-item" href="#top">Dashboard</a>
                             <a class="dropdown-item" href="#top">User Profile</a>
-                            <a class="dropdown-item" href="#top">???</a>
-                            <a class="dropdown-item" href="#top">???</a>
+                            <a class="dropdown-item" href="#top">Data</a>
+                            <a class="dropdown-item" href="#top">Log Out</a>
                         </div>
                     </li>
                     <!-- Smaller devices menu END -->
@@ -92,7 +81,7 @@
                 id="sidebar-container"
                 class="sidebar-expanded d-none d-md-block"
             >
-                <!-- d-* hiddens the Sidebar in smaller devices. Its items can be kept on the Navbar 'Menu' -->
+                <!-- d-* hides the Sidebar in smaller devices. Its items can be kept on the Navbar 'Menu' -->
                 <!-- Bootstrap List Group -->
                 <ul class="list-group">
                     <!-- Separator with title -->
@@ -104,16 +93,39 @@
                     <!-- /END Separator -->
                     <!-- Menu with submenu -->
                     <a
-                        href="#submenu1"
-                        data-toggle="collapse"
-                        aria-expanded="false"
-                        class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
+                        href="/dashboard"
+                        class="bg-dark list-group-item list-group-item-action"
                     >
                         <div
                             class="d-flex w-100 justify-content-start align-items-center"
                         >
                             <span class="fa fa-dashboard fa-fw mr-3"></span>
                             <span class="menu-collapsed">Dashboard</span>
+                        </div>
+                    </a>
+                    <!-- Separator with title -->
+                    <a
+                        href="/userProfile"
+                        class="bg-dark list-group-item list-group-item-action"
+                    >
+                        <div
+                            class="d-flex w-100 justify-content-start align-items-center"
+                        >
+                            <span class="fa fa-user fa-fw mr-3"></span>
+                            <span class="menu-collapsed">User Profile</span>
+                        </div>
+                    </a>
+
+                    <a
+                        href="#submenu1"
+                        data-toggle="collapse"
+                        aria-expanded="false"
+                        class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                        <div
+                            class="d-flex w-100 justify-content-start align-items-center"
+                        >
+                            <span class="fa fa-bar-chart fa-fw mr-3"></span>
+                            <span class="menu-collapsed">Data</span>
                             <span class="submenu-icon ml-auto"></span>
                         </div>
                     </a>
@@ -123,73 +135,15 @@
                             href="#"
                             class="list-group-item list-group-item-action bg-dark text-white"
                         >
-                            <span class="menu-collapsed">Data</span>
+                            <span class="menu-collapsed">Nutrition Log</span>
                         </a>
                         <a
                             href="#"
                             class="list-group-item list-group-item-action bg-dark text-white"
                         >
-                            <span class="menu-collapsed">User Profile</span>
-                        </a>
-                        <a
-                            href="#"
-                            class="list-group-item list-group-item-action bg-dark text-white"
-                        >
-                            <span class="menu-collapsed"></span>
+                            <span class="menu-collapsed">Activity Log</span>
                         </a>
                     </div>
-                    <a
-                        href="#submenu2"
-                        data-toggle="collapse"
-                        aria-expanded="false"
-                        class="bg-dark list-group-item list-group-item-action flex-column align-items-start"
-                    >
-                        <div
-                            class="d-flex w-100 justify-content-start align-items-center"
-                        >
-                            <span class="fa fa-user fa-fw mr-3"></span>
-                            <span class="menu-collapsed">Profile</span>
-                            <span class="submenu-icon ml-auto"></span>
-                        </div>
-                    </a>
-                    <!-- Submenu content -->
-                    <div id="submenu2" class="collapse sidebar-submenu">
-                        <a
-                            href="#"
-                            class="list-group-item list-group-item-action bg-dark text-white"
-                        >
-                            <span class="menu-collapsed">Settings</span>
-                        </a>
-                        <a
-                            href="#"
-                            class="list-group-item list-group-item-action bg-dark text-white"
-                        >
-                            <span class="menu-collapsed">Password</span>
-                        </a>
-                    </div>
-                    <a
-                        href="#"
-                        class="bg-dark list-group-item list-group-item-action"
-                    >
-                        <div
-                            class="d-flex w-100 justify-content-start align-items-center"
-                        >
-                            <span class="fa fa-tasks fa-fw mr-3"></span>
-                            <span class="menu-collapsed">Tasks</span>
-                        </div>
-                    </a>
-                    <!-- Separator with title -->
-                    <a
-                        href="#"
-                        class="bg-dark list-group-item list-group-item-action"
-                    >
-                        <div
-                            class="d-flex w-100 justify-content-start align-items-center"
-                        >
-                            <span class="fa fa-question fa-fw mr-3"></span>
-                            <span class="menu-collapsed">Help</span>
-                        </div>
-                    </a>
                     <a
                         href="#top"
                         data-toggle="sidebar-colapse"

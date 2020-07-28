@@ -61,4 +61,12 @@ module.exports = function (app) {
         }
         res.render('dashboard');
     });
+
+    app.get('/userProfile', (req, res) => {
+        // If the user already has an account send them to the index page
+        if (req.user) {
+            res.render('dashboard');
+        }
+        res.render('dashboard');
+    });
 };
