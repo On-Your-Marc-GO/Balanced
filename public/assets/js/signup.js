@@ -1,3 +1,5 @@
+/*eslint arrow-body-style: ["error", "as-needed"]*/
+/*eslint-env es6*/
 $(document).ready(function () {
     // Getting references to our form and input
     const signUpForm = $('form.signup');
@@ -37,7 +39,7 @@ $(document).ready(function () {
     }
 
     function handleLoginErr(err) {
-        $('#alert .msg').text(err.responseJSON);
+        $('#alert .msg').text(JSON.stringify(err.responseJSON));
         $('#alert').fadeIn(500);
     }
 });

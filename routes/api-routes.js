@@ -21,6 +21,11 @@ module.exports = function (app) {
         db.User.create({
             email: req.body.email,
             password: req.body.password,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            age: req.body.age,
+            height: req.body.height,
+            weight: req.body.weight,
         })
             .then(() => {
                 // res.redirect(307, '/api/login');

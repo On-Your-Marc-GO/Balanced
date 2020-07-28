@@ -1,3 +1,5 @@
+/*eslint arrow-body-style: ["error", "as-needed"]*/
+/*eslint-env es6*/
 $(document).ready(function () {
     // Getting references to our form and inputs
     const loginForm = $('form.login');
