@@ -4,6 +4,18 @@ ul {
 
 .card {
     margin-top: 5vh;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.menu-collapsed {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: whitesmoke;
+}
+
+.navbar {
+    background: #3f51b5 !important;
 }
 
 .rounded {
@@ -33,9 +45,15 @@ ul {
     background-color: #333;
     height: 25px;
 }
+
 .logo-separator {
     background-color: #333;
     height: 60px;
+}
+
+#logoimage {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 
 #sidebar-container .list-group a {
