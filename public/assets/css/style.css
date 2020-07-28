@@ -51,6 +51,10 @@ ul {
     height: 60px;
 }
 
+#logoimage {
+    margin-top: 3vh;
+}
+
 #sidebar-container .list-group a {
     height: 50px;
     color: white;
