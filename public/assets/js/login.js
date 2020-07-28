@@ -1,3 +1,5 @@
+/*eslint arrow-body-style: ["error", "as-needed"]*/
+/*eslint-env es6*/
 $(document).ready(() => {
     // Getting references to our form and inputs
     const loginForm = $('form.login');
@@ -24,7 +26,7 @@ $(document).ready(() => {
 
     // loginUser does a post to our "api/login" route and if successful, redirects us the the index page
     function loginUser(email, password) {
-        $.post('/api/login', {
+        $.post('/login', {
             email: email,
             password: password,
         })

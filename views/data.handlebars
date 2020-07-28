@@ -12,7 +12,7 @@
     {{#each JournalEntries}}
         <div class='row card'>
             <div class='row'>
-                <div class='col-md-4 bg-success'>
+                <div class='col-md-4'>
                     <ul>
                         <li>
                         <p><strong>ID:</strong> {{this.dataValues.id}}</p>
@@ -21,7 +21,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class='col-md-4 bg-success'>
+                <div class='col-md-4'>
                     {{#each this.ActivityEntries}} 
                         <ul>
                             <li>
@@ -32,7 +32,7 @@
                         </ul>
                     {{/each}}
                 </div>
-                <div class='col-md-4 bg-success'>
+                <div class='col-md-4'>
                     {{#each this.NutritionEntries}} 
                         <ul>
                             <li>
