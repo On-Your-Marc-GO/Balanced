@@ -7,16 +7,13 @@ ul {
 }
 
 .menu-collapsed {
-    font-family: 'Monotone', cursive;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     color: whitesmoke;
 }
 
 .navbar {
     background: #3f51b5 !important;
-}
-.nav-link {
-    font-family: 'Monotone', cursive;
 }
 
 .rounded {
