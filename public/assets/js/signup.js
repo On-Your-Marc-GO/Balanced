@@ -1,3 +1,5 @@
+/*eslint arrow-body-style: ["error", "as-needed"]*/
+/*eslint-env es6*/
 $(document).ready(() => {
     // Getting references to our form and input
     const signUpForm = $('form.signup');
@@ -25,19 +27,19 @@ $(document).ready(() => {
     // Does a post to the signup route. If successful, we are redirected to the index page
     // Otherwise we log any errors
     function signUpUser(email, password) {
-        $.post('/api/signup', {
+        $.post('/signup', {
             email: email,
             password: password,
         })
             .then(() => {
-                window.location.replace('/index');
+                window.location.replace('/data');
                 // If there's an error, handle it by throwing up a bootstrap alert
             })
             .catch(handleLoginErr);
     }
 
     function handleLoginErr(err) {
-        $('#alert .msg').text(err.responseJSON);
+        $('#alert .msg').text(JSON.stringify(err.responseJSON));
         $('#alert').fadeIn(500);
     }
 });

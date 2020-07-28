@@ -1,95 +1,28 @@
-<div class="container">
-            <div class="jumbotron bg-warning text-center">
-                <h1>User Profile</h1>
-            </div>
+<div class='container'> 
+    <div class='jumbotron'>
+        <div class='col-lg-12 text-center'>
+            <h1>Profile</h1>
+        </div>
+    </div>
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header">
-                            New Account
-                        </div>
+    <hr />
 
-                        <div class="card-body">
-                            <form action="" method="POST" role="form">
-                                <div class="form-group">
-                                    <label for="">First Name</label>
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="firstName"
-                                        placeholder=""
-                                    />
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Last Name</label>
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="lastName"
-                                        placeholder=""
-                                    />
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col">
-                                        <label for="">Age</label>
-                                        <input
-                                            type="number"
-                                            class="form-control"
-                                            id="age"
-                                            placeholder=""
-                                        />
-                                    </div>
-                                    <div class="form-group col">
-                                        <label for="">Height</label>
-                                        <input
-                                            type="number"
-                                            class="form-control"
-                                            id="height"
-                                            placeholder=""
-                                        />
-                                    </div>
-                                    <div class="form-group col">
-                                        <label for="">Weight</label>
-                                        <input
-                                            type="number"
-                                            class="form-control"
-                                            id="weight"
-                                            placeholder=""
-                                        />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Email</label>
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="email"
-                                        placeholder=""
-                                    />
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Password</label>
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="password"
-                                        placeholder=""
-                                    />
-                                </div>
-                            </form>
-                            <br />
-                            <div class="text-right">
-                                <button
-                                    type="submit"
-                                    class="btn btn-warning btn-md"
-                                    id="createAccountButton"
-                                >
-                                    Create Account
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+    {{#each Users}}
+        <div class='row card'>
+            <div class='row'>
+                <div class='col-md-4'>
+                    <ul>
+                        <li>
+                        <p><strong>First Name:</strong> {{dataValues.firstName}}</p>
+                        <p><strong>Last Name:</strong> {{dataValues.lastName}}</p>
+                        <p><strong>Age:</strong> {{dataValues.age}}</p>
+                        <p><strong>Height:</strong> {{dataValues.height}}</p>
+                        <p><strong>Weight:</strong> {{dataValues.weight}}</p>
+                        <p><strong>Email:</strong> {{dataValues.email}}</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
+    {{/each}}
+</div> 
