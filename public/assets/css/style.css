@@ -4,6 +4,8 @@ ul {
 
 .card {
     margin-top: 5vh;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 10px 10px 5px grey;
 }
 
 .menu-collapsed {
