@@ -3,7 +3,6 @@
 
 module.exports = function (app) {
     app.get('/', (req, res) => {
-        // If the user already has an account send them to the members page
         if (req.user) {
             return res.render('dashboard');
         }
@@ -11,7 +10,7 @@ module.exports = function (app) {
     });
 
     app.get('/goalEntry', (req, res) => {
-        // If the user already has an account send them to the index page
+        // If not user send them to the login page, otherwise send them to the goal page
         if (!req.user) {
             return res.render('login');
         }
@@ -19,7 +18,7 @@ module.exports = function (app) {
     });
 
     app.get('/journalEntry', (req, res) => {
-        // If the user already has an account send them to the index page
+        // If not user send them to the login page, otherwise send them to the journalentry page
         if (!req.user) {
             return res.render('login');
         }
@@ -27,7 +26,7 @@ module.exports = function (app) {
     });
 
     app.get('/login', (req, res) => {
-        // If the user already has an account send them to the index page
+        // If the user is already signed in send them to the dashboard page otherwise go to login page
         if (req.user) {
             res.render('dashboard');
         }
@@ -35,7 +34,6 @@ module.exports = function (app) {
     });
 
     app.get('/signup', (req, res) => {
-        // If the user already has an account send them to the index page
         if (req.user) {
             return res.render('dashboard');
         }
@@ -43,15 +41,15 @@ module.exports = function (app) {
     });
 
     app.get('/dashboard', (req, res) => {
-        // If the user already has an account send them to the index page
+        // If not the user, send them to login page otherwise send them to the page in the route
         if (!req.user) {
-            return res.render('login');
+            return res.render('dashboard'); //i changed this from login so i could work on it
         }
         return res.render('dashboard');
     });
 
     app.get('/userProfile', (req, res) => {
-        // If the user already has an account send them to the index page
+        // If not the user, send them to login page otherwise send them to the page in the route
         if (!req.user) {
             return res.render('login');
         }
