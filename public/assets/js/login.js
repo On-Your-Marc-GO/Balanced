@@ -30,7 +30,7 @@ $(document).ready(() => {
             email: email,
             password: password,
         })
-            .then(function () {
+            .then(() => {
                 window.location.replace('/dashboard');
                 // If there's an error, log the error
             })
