@@ -55,4 +55,12 @@ module.exports = function (app) {
         }
         return res.render('userProfile', req.user);
     });
+
+    app.get('/contact', (req, res) => {
+        // If not the user, send them to login page otherwise send them to the page in the route
+        if (!req.user) {
+            return res.render('login');
+        }
+        return res.render('contact');
+    });
 };
