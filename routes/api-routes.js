@@ -20,9 +20,11 @@ module.exports = function (app) {
     app.post('/signup', (req, res) => {
         db.User.create(req.body)
             .then((dataValues) => {
+                const hbsObject = dataValues.dataValues;
+                console.log(hbsObject);
                 // res.redirect(307, '/api/login');
                 console.log(dataValues);
-                res.render('userProfile', dataValues);
+                res.render('userProfile', hbsObject);
             })
             .catch((err) => {
                 res.status(401).json(err);
