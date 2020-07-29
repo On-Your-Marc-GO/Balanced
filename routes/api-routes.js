@@ -51,13 +51,32 @@ module.exports = function (app) {
     app.post('/activityEntry', (req, res) => {
         db.activityEntry
             .create({
-                name: req.body.name,
+                name: req.body.activityName,
+                activityCategory: req.body.activityCategory,
                 totalTime: req.body.totalTime,
                 entryActivityText: req.body.entryActivityText,
             })
             .then(() => {
                 // res.redirect(307, '/api/login');
                 res.render('activityEntry');
+            })
+            .catch((err) => {
+                res.status(401).json(err);
+            });
+    });
+
+    app.post('/api/journalEntry', (req, res) => {
+        console.log(req.body);
+        db.journalEntry
+            .create({
+                activityName: req.body.activityName,
+                activityCategory: req.body.activityCategory,
+                totalTime: req.body.totalTime,
+                entryActivityText: req.body.entryActivityText,
+            })
+            .then(() => {
+                // res.redirect(307, '/api/login');
+                res.render('journalEntry');
             })
             .catch((err) => {
                 res.status(401).json(err);
