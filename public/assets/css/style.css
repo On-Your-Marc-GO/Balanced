@@ -1,4 +1,5 @@
-h1 {
+h1,
+h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 65px;
@@ -104,4 +105,46 @@ ul {
 
 #backtodash {
     margin-top: 5vh;
+}
+
+/*for the contact form*/
+input[type='text'],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type='submit'] {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+@media screen and (max-width: 600px) {
+    .column,
+    input[type='submit'] {
+        width: 100%;
+        margin-top: 0;
+    }
 }
