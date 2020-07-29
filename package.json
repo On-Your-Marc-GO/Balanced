@@ -3,12 +3,20 @@
     "version": "1.0.0",
     "description": "",
     "main": "server.js",
+    "engines": {
+        "node": "13.x"
+    },
     "scripts": {
+        "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+        "start:prod": "node server.js",
+        "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+        "client": "cd client && npm run start",
+        "install": "cd client && npm install",
+        "build": "cd client && npm run build",
+        "heroku-postbuild": "npm run build",
         "test": "npm run lint",
-        "start": "node server.js",
         "lint": "eslint --quiet .",
-        "fix": "eslint --fix .",
-        "watch": "nodemon server.js"
+        "fix": "eslint --fix ."
     },
     "keywords": [],
     "author": "",
