@@ -1,4 +1,4 @@
-# Fitness Journal (Name TBD)
+# Balance - Fitness Goal Tracker
 
 ## Live Site URL
 
@@ -48,6 +48,18 @@ THEN I am shown a visual indicator or the progress thus far (hitting a goal will
 
 ## Technologies
 
+#### Front-End
+
+-   [Bootstrap](https://getbootstrap.com/)
+-   [Handlebars](https://handlebarsjs.com/)
+-   [jQuery](https://api.jquery.com/)
+
+#### Back-End
+
+-   [Express](https://www.npmjs.com/package/express)
+-   [Sequelize](http://sequelize.org/master/)
+-   [PassPort](https://www.npmjs.com/package/passport)
+
 ## Installation
 
 Since the application has been deployed via Heroku you can simply navigate to the provided site link above. If you would like to instead run it locally on your dev machine, follow the next steps.
@@ -62,6 +74,10 @@ Since the application has been deployed via Heroku you can simply navigate to th
 ## Usage
 
 ## Future Development
+
+Ideas for future development include but are not limited to the following:
+
+-   Ability to track specific activity metrics and load them based on the category. (Ex. If the category for an activity is 'Run', we will record metrics such as Pace, Total Time Run, and Distance. If the user selects 'Biking' the forms will load with and track Distance, Pace, Elevation Change, etc.)
 
 ## Credits
 
