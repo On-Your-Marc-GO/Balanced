@@ -1,3 +1,10 @@
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 65px;
+    margin-top: 3vh;
+}
+
 ul {
     list-style-type: none;
 }
@@ -18,12 +25,9 @@ ul {
     background: #3f51b5 !important;
 }
 
-.rounded {
-    border-radius: 10px;
-}
-
 .btn {
     box-shadow: 10 px 10px 5px grey;
+    border-radius: 4px;
 }
 
 .sidebar-expanded {
@@ -96,4 +100,8 @@ ul {
     min-height: 100vh;
     background-color: #333;
     padding: 0;
+}
+
+#backtodash {
+    margin-top: 5vh;
 }
