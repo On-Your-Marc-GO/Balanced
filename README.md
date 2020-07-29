@@ -88,7 +88,6 @@ Ideas for future development include but are not limited to the following:
 
 -   [Resource 1](www.google.com)
 -   [Resource 2](www.google.com)
--   [Resource 3](www.google.com)
 
 ## License
 
