@@ -41,7 +41,7 @@ THEN I am shown a visual indicator or the progress thus far (hitting a goal will
 
 ## Developers
 
--   Miriam Ghaffar
+-   Mariam Ghaffar
     -   [Github Profile](https://github.com/mghaffar89)
 -   Koan Loc
     -   [Github Profile](https://github.com/loc-koan)
@@ -88,7 +88,6 @@ Ideas for future development include but are not limited to the following:
 
 -   [Resource 1](www.google.com)
 -   [Resource 2](www.google.com)
--   [Resource 3](www.google.com)
 
 ## License
 
@@ -114,4 +113,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-© 2020 Miriam, Ghaffar, Koan Loc, Marc Arguijo All Rights Reserved.
+© 2020 Mariam, Ghaffar, Koan Loc, Marc Arguijo All Rights Reserved.
