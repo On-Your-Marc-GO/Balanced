@@ -53,6 +53,6 @@ module.exports = function (app) {
         if (!req.user) {
             return res.render('login');
         }
-        return res.render('userProfile');
+        return res.render('userProfile', req.user);
     });
 };
