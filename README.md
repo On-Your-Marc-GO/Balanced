@@ -80,14 +80,15 @@ Since the application has been deployed via Heroku you can simply navigate to th
 Ideas for future development include but are not limited to the following:
 
 -   Ability to track specific activity metrics and load them based on the category. (Ex. If the category for an activity is 'Run', we will record metrics such as Pace, Total Time Run, and Distance. If the user selects 'Biking' the forms will load with and track Distance, Pace, Elevation Change, etc.)
+-   Rewards/Accomplishment functionality. When a user hits their goals there could be a trophy case displaying these to the user and others that view profiles.
+-   A social media communnity aspect. The next iteration of this application could serve as a platform for sharing in the future.
+-   The ability to tap into other fitness web API's in order to share and syncronize data. (Ex. Garmin, Nike, Strava, etc.)
 
 ## Credits
 
 -   [Resource 1](www.google.com)
 -   [Resource 2](www.google.com)
 -   [Resource 3](www.google.com)
--   [Resource 4](www.google.com)
--   [Resource 5](www.google.com)
 
 ## License
 
