@@ -41,7 +41,7 @@ THEN I am shown a visual indicator or the progress thus far (hitting a goal will
 
 ## Developers
 
--   Miriam Ghaffar
+-   Mariam Ghaffar
     -   [Github Profile](https://github.com/mghaffar89)
 -   Koan Loc
     -   [Github Profile](https://github.com/loc-koan)
